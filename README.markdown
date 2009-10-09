@@ -12,19 +12,6 @@ Usage
 =====
 Compress a single javascript or stylesheet file or a whole folder.
 
-	echo "Usage:\n";
-	echo "  php minifier.php /public [options]\n";
-	echo "  php minifier.php /stylesheets/common.css [options]\n";
-	echo "\n";
-	echo "Options are:\n";
-	echo str_pad("  -q, --quiet", 26, " ") . "no output\n";
-	echo str_pad("  -p, --pretend", 26, " ") . "no changes are made\n";
-	echo str_pad("  -r, --recursive", 26, " ") . "execute the action on all subdirectories\n";
-	echo str_pad("  -js, --javascripts", 26, " ") . "compress only javascript files\n";
-	echo str_pad("  -css, --stylesheets", 26, " ") . "compress only stylesheets files\n";
-	echo str_pad("  -c, --combine", 26, " ") . "combines all files in one\n";
-	echo str_pad("  -h, --help", 26, " ") . "show this\n";
-
 Usage:
     php minifier.php /public [options]
     php minifier.php /stylesheets/common.css [options]
