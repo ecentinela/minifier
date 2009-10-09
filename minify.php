@@ -20,8 +20,11 @@ Class minify {
 		$all_content = array('js' => array(), 'css' => array());
 		$all_sizes = array('js' => 0, 'css' => 0);
 
+		// create the regexp for checking files
+		$regexp = '/(?<!\.min)\.' . ($only_javascripts ? 'js' : ($only_stylesheets ? 'css' : '(js|css)') . '$/';
+
 		// call the method for compress
-		call_user_func_array('minify::' . $fn, array($path, '/(?<!\.min)\.(js|css)$/', $quiet, $pretend, $recursive, $combine, &$all_content, &$all_sizes));
+		call_user_func_array('minify::' . $fn, array($path, $regexp, $quiet, $pretend, $recursive, $combine, &$all_content, &$all_sizes));
 
 		// combine the files if the combine option is present and a dir is passed
 		if ($dir && $combine) {
