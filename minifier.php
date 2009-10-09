@@ -58,10 +58,16 @@ foreach ($arguments as $arg) {
 
 		case '--javascripts':
 		case '-js':
+			if (in_array('stylesheets', $options))
+				help();
+
 			$options[] = 'javascripts';
 
 		case '--stylesheets':
 		case '-css':
+			if (in_array('javascripts', $options))
+				help();
+
 			$options[] = 'stylesheets';
 
 		default:
