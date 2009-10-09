@@ -21,7 +21,7 @@ Class minify {
 		$all_sizes = array('js' => 0, 'css' => 0);
 
 		// create the regexp for checking files
-		$regexp = '/(?<!\.min)\.' . ($only_javascripts ? 'js' : ($only_stylesheets ? 'css' : '(js|css)') . '$/';
+		$regexp = '/(?<!\.min)\.' . ($only_javascripts ? 'js' : ($only_stylesheets ? 'css' : '(js|css)')) . '$/';
 
 		// call the method for compress
 		call_user_func_array('minify::' . $fn, array($path, $regexp, $quiet, $pretend, $recursive, $combine, &$all_content, &$all_sizes));
