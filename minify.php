@@ -6,7 +6,7 @@ Class minify {
 	*/
 	static function it($path, $options = array()) {
 		$only_javascripts = in_array('javascripts', $options);
-		$only_stylesheets = in_array('stylesheets', $options);
+		$only_stylesheets = $only_javascripts ? false : in_array('stylesheets', $options);
 		$quiet = in_array('quiet', $options);
 		$pretend = in_array('pretend', $options);
 		$recursive = in_array('recursive', $options);
